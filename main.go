@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"carousel/parser"
 	"carousel/scraper"
@@ -70,6 +71,7 @@ func main() {
 				}
 			} else {
 				item = MediaItem{
+					Title:   filepath.Base(strings.TrimSuffix(path, filepath.Ext(path))),
 					Path:    path,
 					Library: lb.Name,
 				}
